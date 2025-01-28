@@ -79,4 +79,9 @@ class User extends Authenticatable
             ->withTimestamps();
     }
 
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
+
 }

@@ -75,7 +75,9 @@
             <button type="submit" class="btn btn-danger">Clear Cart</button>
         </form>
 
-        <a href="#" class="btn btn-success mt-3">Proceed to Checkout</a>
+        <a href="{{ route('order.create', ['payment_method' => 'cash_on_delivery']) }}" class="btn btn-success mt-3">Cash on Delivery</a>
+        <a href="{{ route('order.create', ['payment_method' => 'card_payment']) }}" class="btn btn-primary mt-3">Pay with Card</a>
+
     @endif
 </div>
 

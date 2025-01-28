@@ -32,4 +32,9 @@ class Product extends Model
             ->withPivot('quantity', 'price', 'product_name', 'image')
             ->withTimestamps();
     }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
 }

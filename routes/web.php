@@ -6,6 +6,7 @@ use App\Http\Controllers\user\CartController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OrderController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -69,6 +70,8 @@ Route::middleware('auth')->group(function () {
 
     // Clear the cart for the authenticated user
     Route::delete('/cart/clear', [CartController::class, 'clearCart'])->name('cart.clear');
+
+    Route::resource('order',OrderController::class);
 });
 
 
